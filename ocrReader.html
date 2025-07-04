@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>PDF图片文字识别工具</title>
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js"></script>
+  <script src="tesseract.min.js"></script>
+  <style>
+    body { font-family: "Microsoft Yahei", Arial, sans-serif; background: #f7faff; padding: 30px;}
+    h2 { color: #1976d2; }
+    .container { max-width: 820px; margin: auto; background: #fff; border-radius: 10px; padding: 30px 30px 24px; box-shadow: 0 4px 24px #0001;}
+    #pdfUpload { margin-bottom: 15px;}
+    #output {
+      margin-top: 16px;
+      padding: 16px 14px;
+      background: #f6f8fa;
+      border-radius: 7px;
+      min-height: 180px;
+      font-size: 15px;
+      white-space: pre-wrap;
+      color: #232323;
+      line-height: 1.75;
+      box-shadow: 0 1px 4px #1976d203;
+      max-height: 480px;
+      overflow: auto;
+    }
+    .progress { margin-top: 10px; color: #1976d2; font-size: 15px; }
+    #copyBtn {
+      margin-top: 18px;
+      padding: 9px 20px;
+      background: #1976d2;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 15px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px #1976d209;
+      transition: background 0.2s;
+    }
+    #copyBtn:hover { background: #1356a0;}
+    #pdfUpload { margin-bottom: 0; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>PDF图片文字识别（网页前端版）</h2>
+    <input type="file" id="pdfUpload" accept="application/pdf">
+    <button id="copyBtn" style="display:none;">复制
